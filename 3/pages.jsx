@@ -143,6 +143,40 @@ function HomePage({ setPage }) {
         </div>
       </section>
 
+      {/* WATCH */}
+      <section>
+        <div className="wrap" style={{paddingTop: 40, paddingBottom: 40}}>
+          <Reveal>
+            <div className="eyebrow" style={{marginBottom: 22}}>WATCH · KEYNOTE</div>
+          </Reveal>
+          <Reveal delay={80}>
+            <h2 style={{marginBottom: 28}}>The story, on stage.</h2>
+          </Reveal>
+          <Reveal delay={160}>
+            <div style={{position:'relative', paddingBottom:'56.25%', height:0, overflow:'hidden', borderRadius:14, background:'#000', border:'1px solid var(--line)'}}>
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/M0Kh0zBStAg?start=1&rel=0"
+                style={{position:'absolute', top:0, left:0, width:'100%', height:'100%', border:0}}
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                title="Mahdi Shafiei — Keynote"
+              ></iframe>
+            </div>
+          </Reveal>
+          <Reveal delay={220}>
+            <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:16, marginTop:28}}>
+              <div style={{aspectRatio:'3/4', overflow:'hidden', borderRadius:12, border:'1px solid var(--line)'}}>
+                <img src="assets/portrait.jpg" alt="Mahdi Shafiei portrait" loading="lazy" decoding="async" style={{width:'100%', height:'100%', objectFit:'cover', display:'block'}} />
+              </div>
+              <div style={{aspectRatio:'3/4', overflow:'hidden', borderRadius:12, border:'1px solid var(--line)'}}>
+                <img src="assets/stage-extra.jpg" alt="Mahdi Shafiei keynote" loading="lazy" decoding="async" style={{width:'100%', height:'100%', objectFit:'cover', display:'block'}} />
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* OFFER GRID */}
       <section className="sec-off" style={{color:'var(--ink)'}}>
         <div className="wrap">

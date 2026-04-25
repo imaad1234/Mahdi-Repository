@@ -29,7 +29,7 @@ html, body{
   overflow-x: hidden;
 }
 html{ scroll-behavior: smooth; }
-body{ min-height: 100dvh; }
+body{ min-height: 100vh; }
 
 a{ color: inherit; text-decoration: none; }
 button{ font-family: inherit; }
@@ -169,7 +169,7 @@ p{ line-height: 1.55; color: rgba(255,255,255,.78); font-size: 16px; text-wrap: 
 
 /* ============== Hero ============== */
 .hero{
-  position: relative; min-height: 100dvh;
+  position: relative; min-height: 100vh;
   padding: 140px 0 80px;
   display: flex; align-items: center;
   overflow: hidden;
@@ -985,33 +985,3 @@ footer{
 @media (max-width: 820px){ .two-col{ grid-template-columns: 1fr; } }
 .center{ text-align: center; }
 .mt-24{ margin-top: 24px; } .mt-40{ margin-top: 40px; } .mt-60{ margin-top: 60px; }
-
-/* ============== Mobile / iOS / Android polish ============== */
-*{ -webkit-tap-highlight-color: transparent; }
-html, body{ overscroll-behavior-y: none; }
-button, a, .btn, .nav-cta{ touch-action: manipulation; }
-img{ max-width: 100%; height: auto; }
-
-/* Respect iPhone notch / Dynamic Island */
-@supports (padding: max(0px, env(safe-area-inset-top))){
-  .nav{ top: max(16px, env(safe-area-inset-top)); }
-  body{ padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
-}
-
-/* Touch-only: kill the desktop cursor glow + reduce expensive blur */
-@media (hover: none){
-  #cursor-glow{ display: none !important; }
-  .nav{ backdrop-filter: blur(10px) saturate(1.2); -webkit-backdrop-filter: blur(10px) saturate(1.2); }
-}
-
-/* Smaller phones: tighten hero so content is reachable above the fold */
-@media (max-width: 640px){
-  .hero{ min-height: auto; padding: 110px 0 56px; }
-  h1{ font-size: clamp(40px, 11vw, 72px); }
-}
-
-/* Prefers-reduced-motion: kill animations for accessibility + battery */
-@media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{ animation-duration: .001s !important; transition-duration: .001s !important; scroll-behavior: auto !important; }
-  .pre-m svg{ animation: none; }
-}

@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#FAF7F0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="format-detection" content="telephone=no" />
+<title>Trifid Media — The Biggest Youngest Team in the Region</title>
+<meta name="description" content="Trifid Media — a culture agency powered by youth. 200+ specialists across 6 countries. Strategy, production, storytelling, in-house." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:      oklch(98% 0.008 70);
+    --paper-2:    oklch(96% 0.010 70);
+    --paper-3:    oklch(93% 0.012 70);
+    --ink:        oklch(18% 0.010 60);
+    --ink-2:      oklch(32% 0.010 60);
+    --ink-3:      oklch(54% 0.010 60);
+    --ink-4:      oklch(72% 0.010 60);
+    --line:       oklch(85% 0.012 70);
+    --line-2:     oklch(78% 0.014 70);
+    --accent:     oklch(58% 0.120 40);
+    --accent-ink: oklch(42% 0.110 40);
+    --accent-wash:oklch(94% 0.030 55);
+
+    --f-display:  "Fraunces", "Times New Roman", serif;
+    --f-body:     "Inter", ui-sans-serif, system-ui, sans-serif;
+    --f-mono:     "JetBrains Mono", ui-monospace, monospace;
+
+    --gutter:     clamp(24px, 5vw, 96px);
+    --hair:       1px solid var(--line);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  html,body{background:var(--paper);color:var(--ink)}
+  body{font-family:var(--f-body);font-weight:400;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+  ::selection{background:var(--accent);color:var(--paper)}
+
+  .mono{font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
+  .eyebrow{
+    font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);
+    display:inline-flex;align-items:center;gap:12px;white-space:nowrap;
+  }
+  .eyebrow::before{content:"";width:28px;height:1px;background:var(--ink-4);display:inline-block}
+  .eyebrow .num{color:var(--accent-ink)}
+
+  h2.h2{font-family:var(--f-display);font-weight:300;font-size:clamp(40px,6vw,88px);line-height:.96;letter-spacing:-0.032em;color:var(--ink)}
+  h2.h2 em{font-style:italic;font-weight:400}
+  h3.h3{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,3.4vw,44px);line-height:1.02;letter-spacing:-0.028em;color:var(--ink)}
+  h3.h3 em{font-style:italic}
+  p{color:var(--ink-2);max-width:62ch}
+  p.lead{font-family:var(--f-display);font-weight:300;font-size:clamp(20px,2vw,26px);line-height:1.4;letter-spacing:-0.012em;color:var(--ink-2);max-width:34ch}
+  p.lead em{font-style:italic}
+
+  section{padding:clamp(96px,12vw,160px) var(--gutter);border-top:var(--hair);position:relative}
+  section:first-of-type{border-top:0}
+
+  /* NAV */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:80;
+    display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+    padding:20px var(--gutter);
+    background:color-mix(in oklab, var(--paper) 78%, transparent);
+    backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid transparent;transition:border-color .3s ease, padding .3s ease, background .3s ease;
+  }
+  .nav.scrolled{border-bottom-color:var(--line);padding:14px var(--gutter)}
+  .nav .logo{font-family:var(--f-display);font-weight:400;font-size:22px;letter-spacing:-0.02em;display:inline-flex;align-items:baseline;gap:10px}
+  .nav .logo em{font-style:italic;color:var(--accent-ink);font-weight:500}
+  .nav .logo .mark{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block}
+  .nav ul{display:flex;gap:28px;list-style:none;font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;justify-self:center;color:var(--ink-3)}
+  .nav ul a{padding:6px 0;position:relative;transition:color .25s ease}
+  .nav ul a:hover,.nav ul a.active{color:var(--ink)}
+  .nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+  .nav ul a:hover::after,.nav ul a.active::after{transform:scaleX(1)}
+  .nav .apply{justify-self:end;font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:12px 18px;background:var(--ink);color:var(--paper);border-radius:999px;display:inline-flex;align-items:center;gap:10px;transition:background .25s ease}
+  .nav .apply:hover{background:var(--accent-ink)}
+  .nav .apply .arr{transition:transform .3s ease}
+  .nav .apply:hover .arr{transform:translateX(3px)}
+  @media (max-width:900px){.nav{grid-template-columns:1fr auto}.nav ul{display:none}}
+
+  /* HERO */
+  .hero{
+    min-height:100vh;padding-top:180px;padding-bottom:60px;
+    display:grid;grid-template-rows:auto 1fr auto;gap:60px;position:relative;
+  }
+  .hero .top-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;align-items:start}
+  .hero .top-row .mid{justify-self:center;text-align:center}
+  .hero .top-row .right{justify-self:end;text-align:right}
+  .live{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2.2s ease-out infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in oklab,var(--accent) 45%,transparent)}70%{box-shadow:0 0 0 14px color-mix(in oklab,var(--accent) 0%,transparent)}100%{box-shadow:0 0 0 0 transparent}}
+
+  .hero .wordmark{align-self:center;display:flex;flex-direction:column;gap:0}
+  .hero .wordmark .row-1,.hero .wordmark .row-2{display:flex;align-items:baseline;justify-content:space-between;gap:40px}
+  .hero .wordmark .row-2{margin-top:-0.08em}
+  .hero .wordmark .tag{font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);padding-bottom:.5em;max-width:22ch;text-align:left}
+  .hero .wordmark .tag.right{text-align:right;align-self:flex-end}
+  .hero .name-l1,.hero .name-l2{
+    font-family:var(--f-display);font-weight:300;font-size:clamp(84px,17vw,260px);line-height:.82;letter-spacing:-0.045em;color:var(--ink);white-space:nowrap;
+  }
+  .hero .name-l2{font-style:italic;font-weight:400}
+  .hero .name-l2 .dot{color:var(--accent)}
+
+  .hero .bottom-row{display:grid;grid-template-columns:repeat(4,1fr);border-top:var(--hair)}
+  .hero .bottom-row .cell{padding:22px 18px 0;display:flex;flex-direction:column;gap:6px;border-right:var(--hair)}
+  .hero .bottom-row .cell:first-child{padding-left:0}
+  .hero .bottom-row .cell:last-child{border-right:0}
+  .hero .bottom-row .k{font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-4)}
+  .hero .bottom-row .v{font-family:var(--f-display);font-weight:400;font-size:22px;letter-spacing:-0.02em;color:var(--ink)}
+  .hero .bottom-row .v em{font-style:italic;color:var(--ink-2)}
+
+  @media (max-width:900px){
+    .hero{padding-top:140px}
+    .hero .top-row{grid-template-columns:1fr}
+    .hero .top-row .mid,.hero .top-row .right{justify-self:start;text-align:left}
+    .hero .name-l1,.hero .name-l2{font-size:22vw}
+    .hero .bottom-row{grid-template-columns:repeat(2,1fr)}
+    .hero .bottom-row .cell{border-bottom:var(--hair);padding-bottom:16px}
+    .hero .bottom-row .cell:nth-child(2){border-right:0}
+    .hero .bottom-row .cell:nth-last-child(-n+2){border-bottom:0}
+  }
+
+  /* MANIFESTO */
+  .manifesto{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,6vw,100px);align-items:start}
+  .manifesto .side{position:sticky;top:120px;display:flex;flex-direction:column;gap:20px}
+  .manifesto .side h3{font-family:var(--f-display);font-weight:400;font-size:clamp(24px,2.4vw,32px);letter-spacing:-0.02em}
+  .manifesto .side h3 em{font-style:italic}
+  .manifesto .body{display:flex;flex-direction:column;gap:36px}
+  .manifesto .body .statement{
+    font-family:var(--f-display);font-weight:300;font-size:clamp(32px,4.2vw,60px);line-height:1;letter-spacing:-0.032em;color:var(--ink);
+  }
+  .manifesto .body .statement em{font-style:italic;font-weight:400}
+  .manifesto .body .statement .accent{color:var(--accent-ink)}
+  .manifesto .body p{font-size:17px;line-height:1.65;color:var(--ink-2);max-width:56ch}
+  .manifesto .body p.big{
+    font-family:var(--f-display);font-weight:300;font-size:clamp(22px,2.2vw,28px);line-height:1.35;letter-spacing:-0.015em;color:var(--ink);
+  }
+  .manifesto .body p.big em{font-style:italic}
+  @media (max-width:900px){.manifesto{grid-template-columns:1fr}.manifesto .side{position:static}}
+
+  /* QUOTE STRIP */
+  .qstrip{padding:clamp(70px,9vw,120px) var(--gutter);background:var(--paper-2);border-top:var(--hair);border-bottom:var(--hair)}
+  .qstrip .inner{display:grid;grid-template-columns:auto 1fr;gap:clamp(30px,4vw,60px);align-items:center;max-width:1200px;margin:0 auto}
+  .qstrip .mark{font-family:var(--f-display);font-style:italic;font-weight:400;font-size:clamp(80px,10vw,160px);line-height:.8;color:var(--accent);opacity:.7;align-self:flex-start}
+  .qstrip blockquote{font-family:var(--f-display);font-weight:300;font-size:clamp(28px,3.8vw,52px);line-height:1.08;letter-spacing:-0.028em;color:var(--ink);max-width:26ch}
+  .qstrip blockquote em{font-style:italic;font-weight:400}
+  .qstrip .cite{margin-top:24px;font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3)}
+  @media (max-width:700px){.qstrip .inner{grid-template-columns:1fr}.qstrip .mark{display:none}}
+
+  /* NUMBERS */
+  .numbers .head{display:flex;align-items:baseline;justify-content:space-between;gap:30px;margin-bottom:40px;flex-wrap:wrap}
+  .numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:var(--hair)}
+  .numbers-grid .c{padding:36px 24px 32px 0;border-right:var(--hair);display:flex;flex-direction:column;gap:10px;min-height:210px}
+  .numbers-grid .c:first-child{padding-left:0}
+  .numbers-grid .c:nth-child(n+2){padding-left:24px}
+  .numbers-grid .c:last-child{border-right:0}
+  .numbers-grid .seq{font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-4)}
+  .numbers-grid .n{font-family:var(--f-display);font-weight:300;font-size:clamp(56px,7vw,96px);line-height:.9;letter-spacing:-0.04em;color:var(--ink)}
+  .numbers-grid .n .plus{color:var(--accent-ink);font-style:italic}
+  .numbers-grid .k{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-top:auto}
+  @media (max-width:1100px){.numbers-grid{grid-template-columns:repeat(2,1fr)}.numbers-grid .c{border-bottom:var(--hair)}.numbers-grid .c:nth-child(2){border-right:0}.numbers-grid .c:nth-last-child(-n+2){border-bottom:0}}
+
+  /* CODE — values */
+  .code .head{display:flex;align-items:baseline;justify-content:space-between;gap:30px;margin-bottom:40px;flex-wrap:wrap}
+  .code-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:var(--hair)}
+  .code-cell{padding:36px 24px 32px 0;border-right:var(--hair);border-bottom:var(--hair);display:flex;flex-direction:column;gap:18px;min-height:260px}
+  .code-cell:nth-child(3n){border-right:0}
+  .code-cell:nth-child(n+4){padding-top:36px}
+  .code-cell:nth-child(3n+1){padding-left:0}
+  .code-cell:nth-child(3n+2),.code-cell:nth-child(3n){padding-left:24px}
+  .code-grid .code-cell:nth-last-child(-n+3){border-bottom:0}
+  .code-cell .seq{font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;color:var(--accent-ink)}
+  .code-cell h4{font-family:var(--f-display);font-weight:400;font-size:clamp(26px,2.4vw,32px);line-height:1;letter-spacing:-0.025em;color:var(--ink)}
+  .code-cell h4 em{font-style:italic}
+  .code-cell p{font-size:15px;line-height:1.55;color:var(--ink-2);max-width:38ch}
+  @media (max-width:900px){.code-grid{grid-template-columns:1fr}.code-cell{border-right:0;padding-left:0 !important}}
+
+  /* SERVICES */
+  .services .head{display:flex;align-items:baseline;justify-content:space-between;gap:30px;margin-bottom:40px;flex-wrap:wrap}
+  .services .lead-line{
+    font-family:var(--f-display);font-weight:300;font-size:clamp(44px,6vw,96px);line-height:.95;letter-spacing:-0.036em;color:var(--ink);
+    max-width:18ch;margin-bottom:30px;
+  }
+  .services .lead-line em{font-style:italic;font-weight:400}
+  .services .lead-line .accent{color:var(--accent-ink)}
+  .services-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:var(--hair)}
+  .svc{
+    padding:40px 30px 40px 0;border-right:var(--hair);border-bottom:var(--hair);
+    display:grid;grid-template-columns:auto 1fr;gap:24px;min-height:260px;
+  }
+  .svc:nth-child(even){padding-left:30px;border-right:0}
+  .svc:nth-child(odd){padding-left:0}
+  .services-grid .svc:nth-last-child(-n+2){border-bottom:0}
+  .svc .ix{font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;color:var(--accent-ink);padding-top:4px}
+  .svc h4{font-family:var(--f-display);font-weight:300;font-size:clamp(28px,3vw,40px);line-height:1;letter-spacing:-0.028em;color:var(--ink);margin-bottom:14px}
+  .svc h4 em{font-style:italic;font-weight:400}
+  .svc p{font-size:15px;line-height:1.6;color:var(--ink-2);max-width:40ch}
+  .svc .chain{
+    margin-top:16px;font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);
+  }
+  .svc .chain span{color:var(--ink-2)}
+  @media (max-width:800px){.services-grid{grid-template-columns:1fr}.svc{border-right:0;padding:30px 0}.svc:nth-child(even){padding-left:0}}
+
+  /* FOOTPRINT */
+  .footprint{background:var(--paper-2)}
+  .footprint .head{display:flex;align-items:baseline;justify-content:space-between;gap:30px;margin-bottom:40px;flex-wrap:wrap}
+  .footprint .intro{
+    font-family:var(--f-display);font-weight:300;font-size:clamp(26px,2.6vw,34px);line-height:1.3;letter-spacing:-0.02em;color:var(--ink);
+    max-width:42ch;margin-bottom:50px;
+  }
+  .footprint .intro em{font-style:italic;font-weight:400}
+  .map-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    border-top:var(--hair);border-bottom:var(--hair);
+  }
+  .map-grid .loc{
+    padding:32px 20px 28px 0;border-right:var(--hair);
+    display:flex;flex-direction:column;gap:10px;min-height:180px;position:relative;
+  }
+  .map-grid .loc:first-child{padding-left:0}
+  .map-grid .loc:nth-child(n+2){padding-left:20px}
+  .map-grid .loc:nth-child(4n){border-right:0}
+  .map-grid .loc .flag{font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-4)}
+  .map-grid .loc .country{font-family:var(--f-display);font-weight:400;font-size:clamp(20px,1.8vw,24px);letter-spacing:-0.02em;color:var(--ink)}
+  .map-grid .loc .count{
+    font-family:var(--f-display);font-weight:300;font-size:clamp(42px,5vw,64px);line-height:.9;letter-spacing:-0.03em;color:var(--ink);margin-top:auto;
+  }
+  .map-grid .loc .count em{font-style:italic;color:var(--accent-ink);font-size:.5em;vertical-align:super;margin-left:4px;font-weight:400}
+  .map-grid .loc .role{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+  .map-grid .loc:nth-child(n+5){border-top:var(--hair);padding-top:32px}
+  @media (max-width:900px){.map-grid{grid-template-columns:repeat(2,1fr)}.map-grid .loc:nth-child(2n){border-right:0}.map-grid .loc:nth-child(n+3){border-top:var(--hair)}}
+
+  /* REGIONS */
+  .regions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:var(--hair)}
+  .region{padding:40px 24px 36px 0;border-right:var(--hair);display:flex;flex-direction:column;gap:18px;min-height:260px}
+  .region:first-child{padding-left:0}
+  .region:nth-child(n+2){padding-left:24px}
+  .region:last-child{border-right:0}
+  .region .tag{font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-ink)}
+  .region h4{font-family:var(--f-display);font-weight:300;font-size:clamp(28px,3vw,38px);letter-spacing:-0.028em;line-height:1;color:var(--ink)}
+  .region h4 em{font-style:italic;font-weight:400}
+  .region p{font-size:14px;line-height:1.55;color:var(--ink-2)}
+  .region ul{list-style:none;padding:0;margin-top:auto;display:flex;flex-direction:column;gap:0}
+  .region li{padding:10px 0;border-top:1px dashed var(--line);display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+  .region li .ix{color:var(--ink-4)}
+  @media (max-width:900px){.regions{grid-template-columns:1fr}.region{border-right:0;padding-left:0 !important;border-bottom:var(--hair)}.region:last-child{border-bottom:0}}
+
+  /* AUDIENCE HERO */
+  .audience{padding:clamp(110px,14vw,180px) var(--gutter);background:var(--paper-2);text-align:center}
+  .audience .pre{font-family:var(--f-mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-3);margin-bottom:40px;display:inline-flex;align-items:center;gap:14px}
+  .audience .pre::before,.audience .pre::after{content:"";width:40px;height:1px;background:var(--ink-4);display:inline-block}
+  .audience .big{
+    font-family:var(--f-display);font-weight:300;font-size:clamp(100px,20vw,360px);line-height:.82;letter-spacing:-0.05em;color:var(--ink);
+  }
+  .audience .big em{font-style:italic;font-weight:400;color:var(--accent-ink)}
+  .audience .sub{margin-top:30px;font-family:var(--f-display);font-weight:300;font-style:italic;font-size:clamp(20px,2vw,28px);color:var(--ink-2);letter-spacing:-0.015em}
+  .audience .row{margin-top:50px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .audience .chip{padding:10px 18px;border:var(--hair);border-radius:999px;font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);background:var(--paper)}
+
+  /* CLIENTS */
+  .clients .head{display:flex;align-items:baseline;justify-content:space-between;gap:30px;margin-bottom:40px;flex-wrap:wrap}
+  .clients .lede{font-family:var(--f-display);font-weight:300;font-size:clamp(26px,2.6vw,34px);line-height:1.3;letter-spacing:-0.02em;color:var(--ink);max-width:42ch;margin-bottom:40px}
+  .clients .lede em{font-style:italic;font-weight:400}
+  .client-grid{display:grid;grid-template-columns:repeat(6,1fr);border-top:var(--hair);border-left:var(--hair)}
+  .client-cell{
+    padding:28px 20px;border-right:var(--hair);border-bottom:var(--hair);
+    display:flex;align-items:center;justify-content:center;min-height:110px;
+    font-family:var(--f-display);font-weight:400;font-size:16px;letter-spacing:-0.01em;color:var(--ink-2);text-align:center;
+    transition:background .2s ease, color .2s ease;
+  }
+  .client-cell:hover{background:var(--paper-2);color:var(--ink)}
+  .client-cell em{font-style:italic}
+  @media (max-width:900px){.client-grid{grid-template-columns:repeat(3,1fr)}}
+  @media (max-width:560px){.client-grid{grid-template-columns:repeat(2,1fr)}}
+
+  /* FOUNDER */
+  .founder{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,6vw,100px);align-items:center;background:var(--paper-2);padding:clamp(90px,11vw,140px) var(--gutter);border-top:var(--hair);border-bottom:var(--hair)}
+  .founder .img-wrap{aspect-ratio:4/5;background:var(--paper-3);position:relative;overflow:hidden;border:var(--hair)}
+  .founder .img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:grayscale(6%) contrast(1.02)}
+  .founder .img-wrap .cap{position:absolute;bottom:16px;left:16px;right:16px;display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper);mix-blend-mode:difference}
+  .founder .txt{display:flex;flex-direction:column;gap:28px}
+  .founder .txt .eyebrow{color:var(--ink-3)}
+  .founder .txt h3{font-family:var(--f-display);font-weight:300;font-size:clamp(40px,5vw,72px);line-height:.95;letter-spacing:-0.035em;color:var(--ink)}
+  .founder .txt h3 em{font-style:italic;font-weight:400}
+  .founder .txt p{max-width:44ch;color:var(--ink-2);font-size:16px;line-height:1.65}
+  .founder .txt .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+  .btn{
+    display:inline-flex;align-items:center;gap:12px;font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+    padding:16px 24px;border:1px solid var(--ink);color:var(--ink);background:transparent;border-radius:999px;
+    transition:background .25s ease, color .25s ease, border-color .25s ease;
+  }
+  .btn:hover{background:var(--ink);color:var(--paper)}
+  .btn .arr{transition:transform .25s ease}
+  .btn:hover .arr{transform:translateX(3px)}
+  .btn.primary{background:var(--ink);color:var(--paper)}
+  .btn.primary:hover{background:var(--accent-ink);border-color:var(--accent-ink)}
+  @media (max-width:900px){.founder{grid-template-columns:1fr}}
+
+  /* CTA */
+  .cta{text-align:center;padding:clamp(100px,14vw,180px) var(--gutter)}
+  .cta h2{font-family:var(--f-display);font-weight:300;font-size:clamp(56px,10vw,180px);line-height:.88;letter-spacing:-0.045em;color:var(--ink);max-width:18ch;margin:0 auto 30px}
+  .cta h2 em{font-style:italic;font-weight:400}
+  .cta h2 .accent{color:var(--accent)}
+  .cta p{margin:0 auto 40px;color:var(--ink-2);font-size:17px;max-width:48ch}
+  .cta .row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+  /* FOOTER */
+  footer{padding:clamp(80px,10vw,140px) var(--gutter) 40px;border-top:var(--hair);background:var(--paper-2)}
+  .foot-cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
+  .foot-cols h5{font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin-bottom:20px}
+  .foot-cols ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot-cols a,.foot-cols li{font-family:var(--f-body);font-size:15px;color:var(--ink-2)}
+  .foot-cols a{transition:color .2s ease}
+  .foot-cols a:hover{color:var(--accent-ink)}
+  .foot-cols .brand p{color:var(--ink-2);max-width:34ch;font-size:15px}
+  .foot-cols .brand .logo{font-family:var(--f-display);font-weight:400;font-size:28px;letter-spacing:-0.02em;margin-bottom:16px;display:inline-flex;align-items:baseline;gap:8px}
+  .foot-cols .brand .logo em{font-style:italic;color:var(--accent-ink);font-weight:500}
+  .foot-cols .brand .logo .mark{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block}
+  .foot-bottom{margin-top:60px;padding-top:24px;border-top:var(--hair);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+  @media (max-width:900px){.foot-cols{grid-template-columns:1fr 1fr}.foot-cols .brand{grid-column:1/-1}}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 1s ease, transform 1s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion: reduce){*{animation-duration:.001ms !important;transition-duration:.001ms !important}}
+
+  /* Mobile / iOS / Android polish */
+  *{ -webkit-tap-highlight-color: transparent; }
+  html, body{ overscroll-behavior-y: none; }
+  button, a{ touch-action: manipulation; }
+  img{ max-width: 100%; height: auto; }
+  @supports (padding: max(0px, env(safe-area-inset-top))){
+    .nav, .topbar, header{ padding-top: max(12px, env(safe-area-inset-top)); }
+    body{ padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+  }
+  @media (hover: none){
+    .nav, .topbar{ backdrop-filter: saturate(140%) blur(6px); -webkit-backdrop-filter: saturate(140%) blur(6px); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav" aria-label="Primary">
+  <a href="index.html" class="logo">
+    <span class="mark" aria-hidden="true"></span>
+    Mahdi <em>Shafiei</em>
+  </a>
+  <ul>
+    <li><a href="index.html#principle">About</a></li>
+    <li><a href="index.html#mentor">Mentor</a></li>
+    <li><a href="Trifid Media.html" class="active">Trifid</a></li>
+    <li><a href="index.html#learn">Learn</a></li>
+    <li><a href="index.html#read">Read</a></li>
+    <li><a href="index.html#community">Letter</a></li>
+  </ul>
+  <a href="index.html#apply" class="apply">Apply <span class="arr">→</span></a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top" data-screen-label="01 Hero">
+  <div class="top-row">
+    <div class="left mono">
+      <div>N° 002 · Trifid</div>
+      <div style="margin-top:4px">Edition · MMXXVI</div>
+    </div>
+    <div class="mid">
+      <div class="live"><span class="pulse" aria-hidden="true"></span> Culture agency · Open for briefs</div>
+    </div>
+    <div class="right mono">
+      <div>Dubai · Riyadh · Beirut</div>
+      <div style="margin-top:4px">Sydney · Mumbai · Muscat</div>
+    </div>
+  </div>
+
+  <div class="wordmark">
+    <div class="row-1">
+      <div class="tag">The biggest youngest team <br>in the region.</div>
+      <div class="name-l1">Trifid</div>
+      <div class="tag right">Est. 2018 · 200+ specialists <br>across 6 countries</div>
+    </div>
+    <div class="row-2">
+      <div class="tag" style="opacity:0">placeholder</div>
+      <div class="name-l1 name-l2">Media<span class="dot">.</span></div>
+      <div class="tag right" style="opacity:0">placeholder</div>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="cell"><div class="k">Index 01 — Team</div><div class="v">200<em>+</em> specialists</div></div>
+    <div class="cell"><div class="k">Index 02 — Countries</div><div class="v">6<em>+</em> nations</div></div>
+    <div class="cell"><div class="k">Index 03 — Clients</div><div class="v">1,000<em>+</em> brands</div></div>
+    <div class="cell"><div class="k">Index 04 — Audience</div><div class="v">10M<em>+</em> followers</div></div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section data-screen-label="02 Manifesto">
+  <div class="manifesto">
+    <div class="side">
+      <div class="eyebrow"><span class="num">§ 01</span> · Who we are</div>
+      <h3>Bold minds. <em>Fast hands.</em><br>Real impact.</h3>
+      <p class="mono" style="color:var(--ink-4);line-height:1.6">Average age 23. The energy to prove it.</p>
+    </div>
+    <div class="body">
+      <div class="statement reveal">
+        We merge strategy, production &amp; <em>storytelling</em> into one ecosystem — <span class="accent">powered by youth, fueled by creativity,</span> built on relentless execution.
+      </div>
+      <p class="big reveal">
+        We don't wait for ideas to travel between agencies. We design, shoot, animate, edit, and launch — <em>all under one roof.</em>
+      </p>
+      <p class="reveal">
+        From Dubai to Riyadh, Lebanon to Australia, our teams speak one language: execution. Writers, directors, VFX artists, photographers, editors, strategists, account leads — every brief lives and dies within the Trifid ecosystem. This isn't outsourcing. This is ownership.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE STRIP -->
+<aside class="qstrip">
+  <div class="inner">
+    <div class="mark" aria-hidden="true">“</div>
+    <div>
+      <blockquote>We bring your brand to the people, and the people to your <em>brand.</em></blockquote>
+      <div class="cite">Mahdi Shafiei — CEO &amp; Founder</div>
+    </div>
+  </div>
+</aside>
+
+<!-- NUMBERS -->
+<section class="numbers" data-screen-label="03 Numbers">
+  <div class="head">
+    <div>
+      <div class="eyebrow" style="margin-bottom:16px"><span class="num">§ 02</span> · The ledger</div>
+      <h2 class="h2">Scale, <em>in plain view.</em></h2>
+    </div>
+    <div class="mono" style="max-width:28ch;text-align:right">Updated quarterly · independent figures across the Trifid group</div>
+  </div>
+  <div class="numbers-grid">
+    <div class="c"><div class="seq">— 01</div><div class="n">200<span class="plus">+</span></div><div class="k">Specialists in-house</div></div>
+    <div class="c"><div class="seq">— 02</div><div class="n">6<span class="plus">+</span></div><div class="k">Countries of operation</div></div>
+    <div class="c"><div class="seq">— 03</div><div class="n">1,000<span class="plus">+</span></div><div class="k">Brands delivered for</div></div>
+    <div class="c"><div class="seq">— 04</div><div class="n">10M<span class="plus">+</span></div><div class="k">Community · growing</div></div>
+  </div>
+</section>
+
+<!-- AUDIENCE HERO -->
+<section class="audience" data-screen-label="04 Audience">
+  <div class="pre">The green currency</div>
+  <div class="big">10<em>,</em>000<em>,</em>000<em>+</em></div>
+  <div class="sub">The biggest online community on the planet — and still growing.</div>
+  <div class="row">
+    <span class="chip">Instagram</span>
+    <span class="chip">TikTok</span>
+    <span class="chip">YouTube</span>
+    <span class="chip">X / Twitter</span>
+    <span class="chip">LinkedIn</span>
+  </div>
+</section>
+
+<!-- CODE / VALUES -->
+<section class="code" data-screen-label="05 Code">
+  <div class="head">
+    <div>
+      <div class="eyebrow" style="margin-bottom:16px"><span class="num">§ 03</span> · The code</div>
+      <h2 class="h2">The code <em>we live by.</em></h2>
+    </div>
+    <p class="mono" style="max-width:28ch;text-align:right">Six principles. Taped to every wall, printed on every brief.</p>
+  </div>
+  <div class="code-grid">
+    <div class="code-cell">
+      <div class="seq">— 01 / Passion</div>
+      <h4>We love <em>what we do</em> — and it shows.</h4>
+      <p>Every frame, every headline, every pitch is touched by someone who actually cares. That's non-negotiable.</p>
+    </div>
+    <div class="code-cell">
+      <div class="seq">— 02 / Ethics</div>
+      <h4>Power means <em>responsibility.</em></h4>
+      <p>Our reach is big. The weight of what we ship is bigger. We do the work that stands for something.</p>
+    </div>
+    <div class="code-cell">
+      <div class="seq">— 03 / Creativity</div>
+      <h4>We break rules, <em>then build new ones.</em></h4>
+      <p>Convention is a starting point, never the finish line. If it's been done before, we'll do it differently.</p>
+    </div>
+    <div class="code-cell">
+      <div class="seq">— 04 / Integrity</div>
+      <h4>Doing what's right, <em>not what's easy.</em></h4>
+      <p>Straight talk with clients, straight talk with team. The shortcut costs more later.</p>
+    </div>
+    <div class="code-cell">
+      <div class="seq">— 05 / Innovation</div>
+      <h4>Always one <em>step ahead.</em></h4>
+      <p>Tech moves. Platforms die. We build teams and systems that move faster than the format of the month.</p>
+    </div>
+    <div class="code-cell">
+      <div class="seq">— 06 / Uniqueness</div>
+      <h4>Every brief gets <em>its own answer.</em></h4>
+      <p>We don't resell the playbook that worked last quarter. Culture rewards specificity, not reruns.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" data-screen-label="06 Services">
+  <div class="head">
+    <div>
+      <div class="eyebrow" style="margin-bottom:16px"><span class="num">§ 04</span> · What we do</div>
+    </div>
+  </div>
+  <div class="lead-line">
+    Everything. <em>In-house.</em> <span class="accent">A — Z.</span>
+  </div>
+  <p class="lead" style="margin-bottom:60px;max-width:56ch">
+    A creative machine where strategy, production, and innovation collide. Every function lives under one roof — built for speed and precision.
+  </p>
+
+  <div class="services-grid">
+    <article class="svc">
+      <div class="ix">— 01</div>
+      <div>
+        <h4>Content &amp; <em>Production.</em></h4>
+        <p>Cinematic storytelling that sells. Commercials, campaigns, founder-led films — raw, real, unforgettable.</p>
+        <div class="chain"><span>Concept</span> · <span>Storyboard</span> · <span>Shoot</span> · <span>Edit</span> · <span>Deliver</span></div>
+      </div>
+    </article>
+    <article class="svc">
+      <div class="ix">— 02</div>
+      <div>
+        <h4>Creative <em>Strategy.</em></h4>
+        <p>We don't guess, we design impact. Cultural insight meets creative foresight. Campaigns that move people and move numbers.</p>
+        <div class="chain"><span>Research</span> · <span>Positioning</span> · <span>Narrative</span> · <span>Execution</span></div>
+      </div>
+    </article>
+    <article class="svc">
+      <div class="ix">— 03</div>
+      <div>
+        <h4>Influencer <em>Marketing.</em></h4>
+        <p>Real people, not just profiles. An exclusive creator network across the GCC turning attention into trust.</p>
+        <div class="chain"><span>Discover</span> · <span>Brief</span> · <span>Create</span> · <span>Amplify</span></div>
+      </div>
+    </article>
+    <article class="svc">
+      <div class="ix">— 04</div>
+      <div>
+        <h4>Social Media <em>Management.</em></h4>
+        <p>We don't post — we program attention. Calendars, trendjacking, community. Audiences that move with you, not away.</p>
+        <div class="chain"><span>Plan</span> · <span>Create</span> · <span>Engage</span> · <span>Optimize</span></div>
+      </div>
+    </article>
+    <article class="svc">
+      <div class="ix">— 05</div>
+      <div>
+        <h4>Branding &amp; <em>Design.</em></h4>
+        <p>Timeless identities that feel alive. Logos, packaging, motion systems — visual systems built to scale globally.</p>
+        <div class="chain"><span>Identity</span> · <span>System</span> · <span>Style</span> · <span>Substance</span></div>
+      </div>
+    </article>
+    <article class="svc">
+      <div class="ix">— 06</div>
+      <div>
+        <h4>Digital &amp; <em>Web.</em></h4>
+        <p>Sites that look beautiful and perform flawlessly. UX, speed, and story fused end to end.</p>
+        <div class="chain"><span>Design</span> · <span>Develop</span> · <span>Test</span> · <span>Launch</span></div>
+      </div>
+    </article>
+    <article class="svc">
+      <div class="ix">— 07</div>
+      <div>
+        <h4>Web3 &amp; <em>AI.</em></h4>
+        <p>Tomorrow's brands are built today. AI-powered systems and token ecosystems for the next digital era.</p>
+        <div class="chain"><span>Build</span> · <span>Automate</span> · <span>Launch</span> · <span>Evolve</span></div>
+      </div>
+    </article>
+    <article class="svc">
+      <div class="ix">— 08</div>
+      <div>
+        <h4>3D / CGI &amp; <em>VFX.</em></h4>
+        <p>When reality isn't enough, we build new ones. Hyper-real renders, motion ads, immersive visuals.</p>
+        <div class="chain"><span>Model</span> · <span>Animate</span> · <span>Render</span> · <span>Deliver</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- FOOTPRINT -->
+<section class="footprint" data-screen-label="07 Footprint">
+  <div class="head">
+    <div>
+      <div class="eyebrow" style="margin-bottom:16px"><span class="num">§ 05</span> · The team</div>
+      <h2 class="h2">Six countries. <em>One language —</em> execution.</h2>
+    </div>
+  </div>
+  <p class="intro">Our growing team currently spans six countries with over <em>160</em> dedicated members full time. One ecosystem. No agencies of agencies.</p>
+  <div class="map-grid">
+    <div class="loc">
+      <div class="flag">— AE</div>
+      <div class="country">United Arab Emirates</div>
+      <div class="role">Dubai · HQ</div>
+      <div class="count">107<em>/160</em></div>
+    </div>
+    <div class="loc">
+      <div class="flag">— LB</div>
+      <div class="country">Lebanon</div>
+      <div class="role">Beirut</div>
+      <div class="count">20<em>/160</em></div>
+    </div>
+    <div class="loc">
+      <div class="flag">— SA</div>
+      <div class="country">Saudi Arabia</div>
+      <div class="role">Riyadh</div>
+      <div class="count">9<em>/160</em></div>
+    </div>
+    <div class="loc">
+      <div class="flag">— AU</div>
+      <div class="country">Australia</div>
+      <div class="role">Sydney</div>
+      <div class="count">12<em>/160</em></div>
+    </div>
+    <div class="loc">
+      <div class="flag">— IN</div>
+      <div class="country">India</div>
+      <div class="role">Mumbai</div>
+      <div class="count">7<em>/160</em></div>
+    </div>
+    <div class="loc">
+      <div class="flag">— QA</div>
+      <div class="country">Qatar</div>
+      <div class="role">Doha</div>
+      <div class="count">3<em>/160</em></div>
+    </div>
+    <div class="loc">
+      <div class="flag">— PK</div>
+      <div class="country">Pakistan</div>
+      <div class="role">Karachi</div>
+      <div class="count">3<em>/160</em></div>
+    </div>
+    <div class="loc">
+      <div class="flag">— OM</div>
+      <div class="country">Oman</div>
+      <div class="role">Muscat</div>
+      <div class="count">2<em>/160</em></div>
+    </div>
+  </div>
+</section>
+
+<!-- REGIONS -->
+<section data-screen-label="08 Regions">
+  <div class="head" style="display:flex;align-items:baseline;justify-content:space-between;gap:30px;margin-bottom:40px;flex-wrap:wrap">
+    <div>
+      <div class="eyebrow" style="margin-bottom:16px"><span class="num">§ 06</span> · Where we work</div>
+      <h2 class="h2">Three markets. <em>One playbook.</em></h2>
+    </div>
+  </div>
+  <div class="regions">
+    <article class="region">
+      <div class="tag">— Region 01</div>
+      <h4>United Arab <em>Emirates.</em></h4>
+      <p>Home base. Eight years placing brands into the cultural conversation of the Gulf — from hospitality to hypergrowth tech.</p>
+      <ul>
+        <li><span><span class="ix">01 ·</span> Lifestyle &amp; Hospitality</span><span>Lead</span></li>
+        <li><span><span class="ix">02 ·</span> Government &amp; Tourism</span><span>Lead</span></li>
+        <li><span><span class="ix">03 ·</span> Finance &amp; Fintech</span><span>Active</span></li>
+        <li><span><span class="ix">04 ·</span> F&amp;B and Retail</span><span>Active</span></li>
+      </ul>
+    </article>
+    <article class="region">
+      <div class="tag">— Region 02</div>
+      <h4>Saudi <em>Arabia.</em></h4>
+      <p>A fast-moving market with native teams in Riyadh. We build in Arabic, for Arabic audiences, with local creators on the ground.</p>
+      <ul>
+        <li><span><span class="ix">01 ·</span> Vision 2030 Projects</span><span>Lead</span></li>
+        <li><span><span class="ix">02 ·</span> Entertainment &amp; Sport</span><span>Active</span></li>
+        <li><span><span class="ix">03 ·</span> Retail &amp; E-commerce</span><span>Active</span></li>
+        <li><span><span class="ix">04 ·</span> Luxury &amp; Lifestyle</span><span>Active</span></li>
+      </ul>
+    </article>
+    <article class="region">
+      <div class="tag">— Region 03</div>
+      <h4>International <em>brands.</em></h4>
+      <p>Global clients briefing us to unlock the region and beyond — Sydney to Mumbai, London to LA.</p>
+      <ul>
+        <li><span><span class="ix">01 ·</span> Consumer Tech</span><span>Lead</span></li>
+        <li><span><span class="ix">02 ·</span> Fashion &amp; Beauty</span><span>Lead</span></li>
+        <li><span><span class="ix">03 ·</span> Auto &amp; Mobility</span><span>Active</span></li>
+        <li><span><span class="ix">04 ·</span> Sports &amp; Talent</span><span>Active</span></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients" data-screen-label="09 Clients">
+  <div class="head">
+    <div>
+      <div class="eyebrow" style="margin-bottom:16px"><span class="num">§ 07</span> · 1,000+ brands</div>
+      <h2 class="h2">A short <em>selection.</em></h2>
+    </div>
+  </div>
+  <p class="lede">Delivering culture-driven work at scale. A partial list of the rooms we've entered — categories across region, from startup-stage to category-defining.</p>
+  <div class="client-grid">
+    <div class="client-cell"><em>Hospitality</em> Group</div>
+    <div class="client-cell">Sovereign <em>Tourism</em></div>
+    <div class="client-cell">Regional <em>Bank</em></div>
+    <div class="client-cell">Luxury <em>Auto</em></div>
+    <div class="client-cell">Global <em>Tech</em></div>
+    <div class="client-cell"><em>F&amp;B</em> Chain</div>
+    <div class="client-cell">Fashion <em>House</em></div>
+    <div class="client-cell">Beauty <em>Label</em></div>
+    <div class="client-cell">Sports <em>Federation</em></div>
+    <div class="client-cell"><em>Cultural</em> Authority</div>
+    <div class="client-cell">Retail <em>Group</em></div>
+    <div class="client-cell"><em>Telco</em> Operator</div>
+    <div class="client-cell">Real <em>Estate</em></div>
+    <div class="client-cell">Aviation <em>Carrier</em></div>
+    <div class="client-cell">Lifestyle <em>Media</em></div>
+    <div class="client-cell">E-commerce <em>Platform</em></div>
+    <div class="client-cell">Health <em>Brand</em></div>
+    <div class="client-cell"><em>Studio</em> Entertainment</div>
+  </div>
+  <p class="mono" style="margin-top:24px;color:var(--ink-4)">Named references shared on request. NDA by default.</p>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder" data-screen-label="10 Founder">
+  <div class="img-wrap">
+    <img src="assets/mahdi-portrait.jpeg" alt="Mahdi Shafiei — founder of Trifid Media" loading="lazy" decoding="async" />
+    <div class="cap"><span>Fig. 01 — Keynote</span><span>Dubai</span></div>
+  </div>
+  <div class="txt">
+    <div class="eyebrow"><span class="num">§ 08</span> · The face of the brand</div>
+    <h3>Mahdi <em>Shafiei.</em></h3>
+    <p>Founder &amp; CEO. Operator first, mentor second, founder of the agency that built the biggest online community in the region. The only personal brand here is the one he actually uses.</p>
+    <p class="mono" style="color:var(--ink-3)">Keynote · Founder-led campaigns · 1:1 mentorship</p>
+    <div class="cta-row">
+      <a href="index.html#principle" class="btn">About Mahdi <span class="arr">→</span></a>
+      <a href="index.html#apply" class="btn primary">Mentorship <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" data-screen-label="11 CTA">
+  <div class="eyebrow" style="margin-bottom:30px"><span class="num">§ 09</span> · Work with us</div>
+  <h2>Create with <em>purpose.</em> Execute with obsession. <span class="accent">Impact culture.</span></h2>
+  <p>Brand partnerships, integrated campaigns, founder-led activations, keynotes. If you want to move on the Gulf, MENA, APAC — we've placed a thousand brands there before.</p>
+  <div class="row">
+    <a href="mailto:hello@trifidmedia.com" class="btn primary">Start a brief <span class="arr">→</span></a>
+    <a href="index.html" class="btn">Back to Mahdi <span class="arr">→</span></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-cols">
+    <div class="brand">
+      <div class="logo"><span class="mark" aria-hidden="true"></span> Trifid <em>Media</em></div>
+      <p>The biggest youngest team in the region. Strategy, production, storytelling — all under one roof. Dubai · Riyadh · Beirut · Sydney · Mumbai · Muscat.</p>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#top">Who we are</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Reach</h5>
+      <ul>
+        <li><a href="#">IG · @trifidmedia</a></li>
+        <li><a href="#">TikTok · @trifidmedia</a></li>
+        <li><a href="#">LinkedIn · trifid-media</a></li>
+        <li><a href="index.html">Mahdi Shafiei</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Offices</h5>
+      <ul>
+        <li>Trifid Media HQ, Dubai</li>
+        <li>Riyadh · Beirut · Sydney</li>
+        <li>Mumbai · Muscat · Doha</li>
+        <li><a href="mailto:hello@trifidmedia.com">hello@trifidmedia.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 Trifid Media · Built in Dubai</div>
+    <div>Edition 01 · All rights reserved</div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+  }, { threshold: 0.14 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+</script>
+</body>
+</html>

@@ -110,7 +110,7 @@ function HomePage({ setPage }) {
           <div className="meet">
             <Reveal>
               <div className="meet-photo">
-                <img src="assets/mahdi-stage.jpeg" alt="Mahdi Shafiei on stage" />
+                <img src="assets/mahdi-stage.jpeg" alt="Mahdi Shafiei on stage" loading="lazy" decoding="async" />
                 <div className="frame"></div>
                 <div className="caption">
                   <div className="l">MAHDI · STAGE</div>

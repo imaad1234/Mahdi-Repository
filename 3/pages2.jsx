@@ -114,7 +114,7 @@ function ReadPage() {
               <div className="book-cover-3d">
                 <div className="book">
                   <div className="spine"></div>
-                  <img src="assets/book-cover.png" alt="F*$? The Resume book cover" />
+                  <img src="assets/book-cover.jpg" alt="F*$? The Resume book cover" loading="lazy" decoding="async" />
                 </div>
                 <div className="badge">COMING 2026</div>
               </div>
